@@ -2,8 +2,8 @@
     margin: 0;
     box-sizing: border-box;
 }
-html,body{
-    height: 100%;
+body{
+    height: 100vh;
 }
 header{
     background-color: #1e1e1e;
@@ -37,20 +37,31 @@ main aside {
     display: flex;
     width: 100%;
 }
-.seccion{
+main div section{
     background-color: red;
     flex: 1;
     padding: 20px;
     text-align: center;
     border-right: 1px solid black;
 }
+#bottom{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+}
 footer{
     background-color: #dedede;
     height: 12%;
     display: flex;
-    justify-content: flex-end;
     align-items: center; /*Centra en vertical*/
 }
-footer a{
+footer section{
+    width: 80%;
+}
+#contacto{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
     padding:  0 10px;
 }
