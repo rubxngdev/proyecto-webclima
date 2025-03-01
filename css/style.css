@@ -8,16 +8,21 @@ body{
     height: 100vh;
     margin: 0 auto;
 }
+header,main,footer{
+    width: 100%;
+}
+
 header{
     background-color: #1e1e1e;
     padding: 20px 20px 20px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 18%;
+    height: 15%;
+    position: relative;
 }
 
-header figure{
+header > figure:nth-last-of-type(1){
     position: absolute;
     left: 10px;
     display: flex;
@@ -28,60 +33,89 @@ header figure{
     text-align: center;
     margin: 0 20px;
 }
-header figure img{
+header > figure:nth-last-of-type(1) > img:nth-last-of-type(1){
     width: 50px;
     height: 50px;
     margin-right: 10px;
 }
 
-header nav{
+header > nav{
     background-color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     width: 20%;
     border-radius: 20px; /* Esquinas redondeadas */
     padding: 10px 20px;
     font-size: 18px;
+    display: flex;
+    align-items: center;
 }
+header > nav > p{
+    width: 80%;
+}
+
+header > nav:nth-last-of-type(1) > figure{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+header > nav:nth-last-of-type(1) > figure > img{
+    max-width: 40%;
+}
+
 main{
     display: flex;
     height: 75%;
     border-bottom: 1px solid black;
 }
-main aside {
+main > aside {
     width: 30%;
     text-align: center;
     background-color: #dedede;
     border-right: 1px solid black;
     display: flex;
     flex-direction: column;
-    padding: 8px 0px 0px 0px;
 }
 
 main > aside > section {
     flex: 1;
     display: flex;
-    align-items: center; /* Centrar verticalmente */
     justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
 }
 
 main > aside > section:nth-of-type(1) {
-    flex: 1.5; /* Primer elemento */
+    flex: 1.3; /* Primer elemento */
+}
+
+main > aside > section:nth-of-type(1) > figure > img {
+    max-width: 20%; 
+    width: auto; /* Ajusta el ancho automáticamente */
+    height: auto; /* Ajusta la altura automáticamente */
+    object-fit: contain; /* Ajusta la imagen para que se ajuste dentro del contenedor sin distorsionarse */
+    padding: 10px 0px;
+}
+main > aside > section:nth-of-type(1) > figure > figcaption{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
 }
 
 main > aside > section:nth-of-type(2) {
-    flex: 3.5; /* Segundo elemento */
+    flex: 3.7; /* Segundo elemento */
 }
 
 main > aside > section:nth-of-type(2) > article {
-    border: 1px solid black;
     height: 90%;
     width: 80%;
+    background-color: grey;
 }
 
 main > aside > section:nth-of-type(3) {
     flex: 1; /* Tercer elemento */
     display: flex;
     justify-content: space-around;
+    align-items: center; /* Centrar verticalmente */
 }
 
 main > aside > section:nth-of-type(3) > article {
@@ -103,6 +137,8 @@ main > aside > section:nth-of-type(3) > article {
     text-align: center;
     border: 3px solid black;
     border-radius: 25px;
+    display: flex;
+    flex-direction: column;
 }
 
 .tiempo{
@@ -111,9 +147,7 @@ main > aside > section:nth-of-type(3) > article {
     background-color: rgb(36, 75, 78);
     border-radius: 25px;
     padding: 20px;
-    height: 350px;
-    margin-top: 20px;
-
+    height: 50%;
 }
 
 .prevision{
@@ -123,8 +157,7 @@ main > aside > section:nth-of-type(3) > article {
     background-color: rgb(36, 75, 78);
     border-radius: 25px;
     padding: 20px;
-    height: 200px;
-    margin-top: 30px;
+    height: 20%;
 }
 
 .prevision::before {
@@ -139,12 +172,10 @@ main > aside > section:nth-of-type(3) > article {
 }
 
 .texto{
-    margin-top: 60px;
     font-size: 10px;
     text-align: left;
+    height: 15%;
 }
-
-
 
 #bottom{
     display: flex;
@@ -156,13 +187,20 @@ footer{
     height: 10%;
     display: flex;
     align-items: center; /*Centra en vertical*/
+    padding: 0px 20px;
 }
-footer section{
-    width: 80%;
+footer > section{
+    height: 100%;
 }
-#contacto{
+/* CONTACTO */
+footer > section:nth-last-of-type(1){
     width: 20%;
     display: flex;
     justify-content: flex-end;
-    padding:  0 10px;
+    align-items: center;
+}
+/*REDES*/
+footer > section:nth-last-of-type(2){
+    width: 80%;
+    align-content: center;
 }
