@@ -1,163 +1,182 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-body{
-    width: 1400px;
+
+body {
+    width: 100vw;
     height: 100vh;
-    margin: 0 auto;
-}
-header,main,footer{
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
 }
 
-header{
+header {
     background-color: #1e1e1e;
-    padding: 20px 20px 20px 20px;
+    padding: 10px 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 15%;
-    position: relative;
+    height: 10%;
 }
 
-header > figure:nth-last-of-type(1){
-    position: absolute;
-    left: 10px;
+header figure {
     display: flex;
+    align-items: center;
     color: rgb(233, 193, 12);
-    font-size: 40px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
     font-weight: bold;
-    text-align: center;
-    margin: 0 20px;
 }
-header > figure:nth-last-of-type(1) > img:nth-last-of-type(1){
-    width: 50px;
-    height: 50px;
+
+header figure img {
+    width: 40px;
+    height: 40px;
     margin-right: 10px;
 }
 
-header > nav{
+header nav {
     background-color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 20%;
-    border-radius: 20px; /* Esquinas redondeadas */
-    padding: 10px 20px;
-    font-size: 18px;
+    width: 25%;
+    border-radius: 20px;
+    padding: 5px 10px;
     display: flex;
     align-items: center;
-}
-header > nav > p{
-    width: 80%;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-header > nav:nth-last-of-type(1) > figure{
+header nav input {
+    width: 80%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 5px;
+}
+
+header nav figure {
     width: 20%;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-}
-header > nav:nth-last-of-type(1) > figure > img{
-    max-width: 40%;
 }
 
-main{
-    display: flex;
-    height: 75%;
-    border-bottom: 1px solid black;
+header nav figure img {
+    width: 30px;
+    height: 30px;
 }
-main > aside {
+
+main {
+    display: flex;
+    height: 80%;
+    width: 100%;
+}
+
+aside {
     width: 30%;
-    text-align: center;
     background-color: #dedede;
     border-right: 1px solid black;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-main > aside > section {
+aside section {
     flex: 1;
     display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-main > aside > section:nth-of-type(1) {
-    flex: 1.3; /* Primer elemento */
+aside section:nth-of-type(1) {
+    flex: 1.3;
 }
 
-main > aside > section:nth-of-type(1) > figure > img {
-    max-width: 20%; 
-    width: auto; /* Ajusta el ancho automáticamente */
-    height: auto; /* Ajusta la altura automáticamente */
-    object-fit: contain; /* Ajusta la imagen para que se ajuste dentro del contenedor sin distorsionarse */
-    padding: 10px 0px;
+aside section:nth-of-type(1) img {
+    max-width: 20%;
+    height: auto;
+    padding: 10px 0;
 }
-main > aside > section:nth-of-type(1) > figure > figcaption{
+
+aside > section:nth-of-type(1) > figure{
+    text-align: center;
+}
+
+aside section:nth-of-type(1) figcaption {
     font-size: 20px;
     font-weight: bold;
     color: black;
+    text-align: center;
 }
 
-main > aside > section:nth-of-type(2) {
-    flex: 3.7; /* Segundo elemento */
+aside section:nth-of-type(2) {
+    flex: 3.7;
 }
 
-main > aside > section:nth-of-type(2) > article {
+aside section:nth-of-type(2) article {
     height: 90%;
     width: 80%;
     background-color: grey;
 }
 
-main > aside > section:nth-of-type(3) {
-    flex: 1; /* Tercer elemento */
+aside section:nth-of-type(3) {
+    flex: 1;
     display: flex;
     justify-content: space-around;
-    align-items: center; /* Centrar verticalmente */
+    align-items: center;
 }
 
-main > aside > section:nth-of-type(3) > article {
+aside section:nth-of-type(3) article {
     background-color: grey;
     border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
 }
 
-.secciones{
+.secciones {
     display: flex;
     justify-content: space-around;
-    width: 100%;;
-}
-.seccion{
-    
-    justify-content: space-between;
-    width: 100%;
+    width: 70%;
     padding: 20px;
-    margin: 30px 10px;
+}
+
+.seccion {
+    width: 30%;
+    padding: 20px;
+    margin: 10px;
     text-align: center;
     border: 3px solid black;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    background-color: #f0f0f0;
 }
 
-.tiempo{
-    
+.tiempo {
     color: white;
     background-color: rgb(36, 75, 78);
     border-radius: 25px;
     padding: 20px;
     height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.prevision{
-
+.prevision {
     position: relative;
     color: white;
-    background-color: rgb(36, 75, 78);
+    background-color: rgb(36, 75, 78); 
     border-radius: 25px;
     padding: 20px;
     height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .prevision::before {
@@ -171,36 +190,45 @@ main > aside > section:nth-of-type(3) > article {
     transform: translateY(-50%);
 }
 
-.texto{
-    font-size: 10px;
+.texto {
+    font-size: 12px;
     text-align: left;
-    height: 15%;
+    height: 20%;
+    padding: 10px;
+    background-color: #f0f0f0; 
 }
 
-#bottom{
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-footer{
-    background-color: #dedede;
+footer {
+    background-color: #dedede; 
     height: 10%;
     display: flex;
-    align-items: center; /*Centra en vertical*/
-    padding: 0px 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-top: 1px solid black; 
 }
-footer > section{
-    height: 100%;
+
+footer section {
+    align-items: center;
 }
-/* CONTACTO */
-footer > section:nth-last-of-type(1){
+
+footer section:nth-last-of-type(1) {
     width: 20%;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
 }
-/*REDES*/
-footer > section:nth-last-of-type(2){
+
+footer section:nth-last-of-type(2) {
     width: 80%;
-    align-content: center;
+}
+
+footer section figure img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+}
+
+footer section a {
+    margin-right: 20px; /* Ajuste para el enlace "Contacto" */
+    padding: 5px; /* Ligero padding */
 }
