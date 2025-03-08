@@ -6,17 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Pablo Fernandez">
     <title>Contacto</title>
-    <style>
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        form label {
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/contacto.css">
 </head>
 <body>
     <header></header>
@@ -27,7 +17,7 @@
             <p>Si tienes alguna duda o sugerencia, no dudes en contactarnos.</p>
             <fieldset>
                 <legend>Formulario</legend>
-                <form action="" method="POST">
+                <form action="dudaUsuario.php" method="POST">
                     <label for="nombre">Nombre: </label>
                     <input type="text" name="nombre" id="nombre" required><br>
                     <label for="email">Email: </label>

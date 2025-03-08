@@ -1,0 +1,86 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #87CEEB, #00BFFF);
+    background-image: url('../imagenes/wallpaperflare.com_wallpaper.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 auto;
+    color: #333;
+    overflow: hidden; 
+    position: relative; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+}
+
+
+.contenedor {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    z-index: 2;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+    color: #0056b3;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif; 
+    color: #333;
+}
+
+/* Botón */
+.boton-entrar {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #FFA500;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.boton-entrar:hover {
+    background-color: #FF8C00;
+}
+
+/* Animación del sol*/
+body::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #FFD700;
+    animation: moverSol 40s linear infinite;
+    z-index: 1;
+}
+
+@keyframes moverSol {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(calc(100vw - 120px)); /* Mueve el sol a la derecha */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
