@@ -6,6 +6,7 @@
     <meta name="author" content="Pablo Fernandez y Ruben Gumpert">
     <title>SVWEATHER</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 </head>
 <body>
     <header>
@@ -14,10 +15,11 @@
             <figcaption>SVWEATHER</figcaption>
         </figure>
         <nav>
-            <input type="text" placeholder="El tiempo en..." id="buscador">
-            <figure>
-                <img src="./imagenes/busqueda-de-lupa.png" alt="Icono de lupa">
-            </figure>
+            <label for="buscador" class="sr-only">Buscar ubicación</label>
+            <input type="text" placeholder="El tiempo en..." id="buscador" aria-label="Buscar ubicación">
+            <button id="buscar-btn">
+                <i class="bi bi-search"></i>
+            </button>
         </nav>
     </header>
    
@@ -25,86 +27,61 @@
         <aside>
             <section>
                 <figure>
-                    <img src="./imagenes/nature-sky-raindrop-png-5691839.png" alt="Icono de clima">
-                    <figcaption>California, Los Angeles</figcaption>
+                    <figcaption id="location">California, Los Angeles</figcaption>
                 </figure>
             </section>
             <section>
-                <article>
-                    INFORMACION API
+                <article class="weather-info">
+                    <img id="weather-icon" src="" alt="Icono de clima">
+                    <div>
+                        <p><i class="bi bi-thermometer"></i> Temperatura: <span id="temp">--</span>°C</p>
+                        <p><i class="bi bi-moisture"></i> Sensación: <span id="feelslike">--</span>°C</p>
+                        <p><i class="bi bi-droplet"></i> Humedad: <span id="humidity">--</span>%</p>
+                        <p><i class="bi bi-wind"></i> Viento: <span id="wind">--</span> km/h</p>
+                        <p><i class="bi bi-eye"></i> Visibilidad: <span id="visibility">--</span> km</p>
+                        <p><i class="bi bi-cloud"></i> Nubes: <span id="cloud">--</span>%</p>
+                    </div>
                 </article>
             </section>
-            <section>
-                <article>
-                    <p>24ºC</p>
-                    <figure>
-                        <img src="" alt="Icono de clima">
-                    </figure>
-                    <p>17:00</p>
-                </article>
-                <article>
-                    <p>24ºC</p>
-                    <figure>
-                        <img src="" alt="Icono de clima">
-                    </figure>
-                    <p>17:00</p>
-                </article>
-                <article>
-                    <p>24ºC</p>
-                    <figure>
-                        <img src="" alt="Icono de clima">
-                    </figure>
-                    <p>17:00</p>
-                </article>
-                <article>
-                    <p>24ºC</p>
-                    <figure>
-                        <img src="" alt="Icono de clima">
-                    </figure>
-                    <p>17:00</p>
-                </article>
-                <article>
-                    <p>24ºC</p>
-                    <figure>
-                        <img src="" alt="Icono de clima">
-                    </figure>
-                    <p>17:00</p>
-                </article>
+            <section class="hourly-forecast-container">
+                <div class="hourly-forecast">
+                    <!-- Esto lo rellena la API -->
+                </div>
             </section>
         </aside>
+        
         <div class="secciones">
             <section class="seccion">
-                <article class="tiempo">
-                    <p>TIEMPO</p>
-                </article>
-                <article class="prevision">
-                    <p>PREVISION</p>
-                </article>
-                <article class="texto">
-                    <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
-                </article>
+                <h3>AYER</h3>
+                <div class="weather-day">
+                    <img id="yesterday-icon" src="" alt="Icono del clima">
+                    <p class="temp"><span id="yesterday-temp">--</span>°C</p>
+                    <div class="weather-details" id="yesterday-comparison">
+                        <!-- Esto lo rellena la API -->
+                    </div>
+                </div>
             </section>
+
             <section class="seccion">
-                <article class="tiempo">
-                    <p>TIEMPO</p>
-                </article>
-                <article class="prevision">
-                    <p>PREVISION</p>
-                </article>
-                <article class="texto">
-                    <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
-                </article>
+                <h3>HOY</h3>
+                <div class="weather-day">
+                    <img id="today-icon" src="" alt="Icono del clima">
+                    <p class="temp"><span id="today-temp">--</span>°C</p>
+                    <div class="weather-details" id="today-details">
+                        <!-- Esto lo rellena la API -->
+                    </div>
+                </div>
             </section>
+            
             <section class="seccion">
-                <article class="tiempo">
-                    <p>TIEMPO</p>
-                </article>
-                <article class="prevision">
-                    <p>PREVISION</p>
-                </article>
-                <article class="texto">
-                    <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
-                </article>
+                <h3>MAÑANA</h3>
+                <div class="weather-day">
+                    <img id="tomorrow-icon" src="" alt="Icono del clima">
+                    <p class="temp"><span id="tomorrow-temp">--</span>°C</p>
+                    <div class="weather-details" id="tomorrow-forecast">
+                        <!-- Esto lo rellena la API -->
+                    </div>
+                </div>
             </section>
         </div>
     </main>
@@ -112,13 +89,16 @@
     <footer>
         <section>
             <figure>
-                <img src="./imagenes/footer_facebook.png" alt="Facebook">
-                <img src="./imagenes/footer_twitter.png" alt="Twitter">
+                <a href="https://www.facebook.com/?locale=es_ES"><i class="bi bi-facebook"></i></a>
+                <a href="https://x.com/?lang=es"><i class="bi bi-twitter"></i></a>
+                <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
             </figure>
         </section>
         <section>
-            <a href="./contacto.html">Contacto</a>
+            <a href="./contacto.html" class="btn-contacto">Contacto</a>
         </section>
     </footer>
+
+    <script src="./js/weather.js"></script>
 </body>
 </html>
